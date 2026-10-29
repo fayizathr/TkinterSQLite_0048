@@ -1,11 +1,10 @@
 
 
-def prediksi():
-    try:
-        nama = nama_entry.get().strip()
-        usia = int(usia_entry.get())
-        gula = float(gula_entry.get())
-        bmi = float(bmi_entry.get())
-        riwayat = ortu_box.get()
+        if not nama or not riwayat:
+            raise ValueError
 
-       
+        if usia < 1 or usia > 120 or gula <= 0 or bmi <= 0:
+            messagebox.showerror("Error", "Data tidak valid! Masukkan angka yang sesuai.")
+            return
+
+      
